@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Company Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid red;
+      margin-bottom: 20px;
+    }
+
+    td, th {
+      border: 1px solid black;
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #dbe6f0;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0a5dff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .submit-btn:hover {
+      background-color: #003fc2;
+    }
+
+    h3 {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Company Form</h2>
+
+  <form action="/submit" method="POST">
+    <table>
+      <tr>
+        <th>Order Type:</th>
+        <td colspan="3">
+          <select name="orderType" required>
+            <option value="" disabled selected>Select Order Type</option>
+            <option value="Demo">Demo</option>
+            <option value="POC">POC</option>
+            <option value="Order">Order</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>POC Period:</th>
+        <td><input type="text" name="pocPeriod" required /></td>
+      </tr>
+      <tr>
+        <th>Site Name:</th>
+        <td><input type="text" name="siteName" required /></td>
+      </tr>
+      <tr>
+        <th>Site Address:</th>
+        <td><input type="text" name="siteAddress" required /></td>
+      </tr>
+      <tr>
+        <th>Job Work:</th>
+        <td><input type="text" name="jobWork" required /></td>
+      </tr>
+      <tr>
+        <th>Date of Installation:</th>
+        <td><input type="date" name="installationDate" required /></td>
+      </tr>
+    </table>
+
+    <h3>Requirement</h3>
+    <table>
+      <tr>
+        <th>SNo.</th>
+        <th>Items</th>
+        <th>Qty</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><input type="text" name="item1" value="DI-HMS panel with battery" readonly /></td>
+        <td><input type="text" name="qty1" required /></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><input type="text" name="item2" value="Wire" readonly /></td>
+        <td><input type="text" name="qty2" required /></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><input type="text" name="item3" value="M2M SIM" readonly /></td>
+        <td><input type="text" name="qty3" required /></td>
+      </tr>
+    </table>
+
+    <button class="submit-btn" type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
